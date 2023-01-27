@@ -1,9 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@layer components{
+  .sidebar-icon{
+    @apply flex items-center justify-center 
+     cursor-pointer mb-8
+     hover:text-white ml-10
+     transition-all duration-300 ease-linear;
+    
+  }
+  .tool{
+    @apply absolute w-auto p-1 ml-6 min-w-max w-16
+    bg-gray-700 text-xs rounded h-6 text-white transition-all 
+    duration-100 scale-0 origin-left
+  }
+  .input-items{
+    @apply rounded border-slate-300 border w-3/4 mb-4 text-xs h-7;
+  }
+  .label-inputs{
+    @apply text-xs font-bold;
+  }
+  .add-button{
+     @apply bg-blue-500 text-white mt-2 w-12 text-sm  ml-3 text-xs h-6 hover:bg-blue-900
+  }
+  .cancel-button{
+    @apply text-black border-2 border-gray-400 mt-2 w-14 text-sm ml-3 text-xs h-6
+  }
+  .salary, .date{
+    @apply rounded border-slate-300 border w-48 mb-4 text-xs h-7;
+  }
+  .label-inputs-dat{
+    @apply text-xs font-bold ml-16;
+  }
+  .striped-table{
+    @apply mx-auto mt-10 table-auto border-collapse border border-slate-400 ;
+  }
+}
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
