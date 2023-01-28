@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
-import { employeesData } from "../../Data";
 function Add({setIsAdding,empList,setEmpList,setIsDashboard}){
 
     const [firstName,setFirstName]=useState('');
