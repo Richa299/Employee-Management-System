@@ -10,18 +10,36 @@ function App() {
   const[empList,setEmpList]=useState(employeesData)
   const[isAdding,setIsAdding]=useState(false);
   const[isEditing,setIsEditing]=useState(false);
+  const[isDashboard,setIsDashboard]=useState(true);
+  const[selectedEmp, setSelectedEmp]=useState(null)
   return (
     <div className="flex">
-    <SideBar setIsAdding={setIsAdding}/>
-    {(!isAdding)&& (!isEditing)&&
-          <List empList={empList} setIsEditing={setIsEditing}/>
-          }
-          {isAdding && 
-            <Add setIsAdding={setIsAdding} setEmpList={setEmpList} empList={empList}/>
-          }
-          {isEditing &&
-            <Edit setIsEditing={setIsEditing}/>
-          }
+    <SideBar setIsAdding={setIsAdding} setIsDashboard={setIsDashboard} setIsEditing={setIsEditing}/>
+
+    {(!isAdding)&& (!isEditing)&& (isDashboard)&&
+          <List 
+          empList={empList} 
+          setIsEditing={setIsEditing} 
+          setEmpList={setEmpList} 
+          setSelectedEmp={setSelectedEmp}/>
+    }
+   
+    {isAdding && 
+            <Add 
+            setIsAdding={setIsAdding} 
+            setEmpList={setEmpList} 
+            empList={empList}
+            setIsDashboard={setIsDashboard}/>
+    }
+
+   {isEditing &&
+            <Edit 
+            setIsEditing={setIsEditing} 
+            selectedEmp={selectedEmp}
+            empList={empList}
+            setEmpList={setEmpList}
+            />
+   }
     </div>
   );
 }

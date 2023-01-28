@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import { employeesData } from "../../Data";
-function Add({setIsAdding,empList,setEmpList}){
+function Add({setIsAdding,empList,setEmpList,setIsDashboard}){
+
     const [firstName,setFirstName]=useState('');
     const [lastName,setLastName]=useState('');
     const [email,setEmail]=useState('');
     const [address,setAddress]=useState('');
     const [salary, setSalary]=useState('');
     const [date,setDate]=useState('');
+    const inputRef=useRef(null);
+
+    useEffect(()=>{
+        inputRef.current.focus();
+        
+    },[])
+
     const handleAdd=(e)=>{
         e.preventDefault();
         if(!firstName || !lastName || !email || !address || !salary || !date){
@@ -31,6 +39,7 @@ function Add({setIsAdding,empList,setEmpList}){
        empList.push(newEmployee)
        setEmpList(empList)
        setIsAdding(false)
+       setIsDashboard(true)
     }
     
     return(
@@ -43,28 +52,39 @@ function Add({setIsAdding,empList,setEmpList}){
             <input 
                  type="text" 
                  className="input-items" 
+                 ref={inputRef}
                  onChange={e=>setFirstName(e.target.value)}/>
+
+
             <label className="label-inputs">Last Name</label>
             <input 
                  type="text" 
                  className="input-items" 
                  onChange={e=>setLastName(e.target.value)}/>
+
+
             <label className="label-inputs">Email</label>
             <input 
                  type="email" 
                  className="input-items"
                  onChange={e=>setEmail(e.target.value)} />
+
+
             <label className="label-inputs">Address</label>
             <input 
                   type="text" 
                   className="input-items" 
                   onChange={e=>setAddress(e.target.value)}/>
+
+
             <div>
             <label className="label-inputs">Salary</label>
             <input 
                   type="number" 
                   className="salary" 
                   onChange={e=>setSalary(e.target.value)}/>
+
+
             <label className="label-inputs-dat">Date</label>
             <input 
                   type="date" 
