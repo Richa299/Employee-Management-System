@@ -33,8 +33,7 @@ Swal.fire({
 })
 }
     return(
-         <div className="w-4/5 text-center">
-            <h1 className="text-2xl font-bold text-blue-500">Employee Management System</h1>
+         <div className="mx-auto">
             <table className="striped-table text-center">
                 <thead>
                     <tr>

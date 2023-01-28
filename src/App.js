@@ -13,6 +13,8 @@ function App() {
   const[isDashboard,setIsDashboard]=useState(true);
   const[selectedEmp, setSelectedEmp]=useState(null)
   return (
+    <div className='w-full text-center'>
+       <h1 className="text-2xl font-bold text-yellow-700 pt-3 bg-gray-800 h-16">Employee Management System</h1>
     <div className="flex">
     <SideBar setIsAdding={setIsAdding} setIsDashboard={setIsDashboard} setIsEditing={setIsEditing}/>
 
@@ -40,6 +42,7 @@ function App() {
             setEmpList={setEmpList}
             />
    }
+    </div>
     </div>
   );
 }

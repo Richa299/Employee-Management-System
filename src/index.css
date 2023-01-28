@@ -33,7 +33,7 @@
     @apply text-xs font-bold ml-16;
   }
   .striped-table{
-    @apply mx-auto mt-10 table-auto border-collapse border border-slate-400 ml-3;
+    @apply mt-10 border-collapse border ml-3 bg-gray-200;
   }
 }
 body {

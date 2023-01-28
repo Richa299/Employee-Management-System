@@ -1,12 +1,12 @@
 import {IoPersonAddSharp} from 'react-icons/io5'
-import {CgHome} from 'react-icons/cg'
+import {MdHomeFilled} from 'react-icons/md'
 import {BsFillBarChartFill, BsFillGridFill} from 'react-icons/bs'
 import {AiFillSetting} from 'react-icons/ai'
 function SideBar({setIsAdding, setIsDashboard,setIsEditing}){
     return(
-        <div className='sidebar-expand flex w-24 bg-yellow-500 h-screen text-black-900 text-0.5'>
+        <div className='sidebar-expand flex w-24 bg-yellow-400 h-screen text-gray-900 text-xl'>
         <ul className="mt-28">
-            <SideBarIcon icon={<CgHome/>} text="Dashboard" 
+            <SideBarIcon icon={<MdHomeFilled/>} text="Dashboard" 
             setIsDashboard={setIsDashboard} 
             setIsAdding={setIsAdding} 
             setIsEditing={setIsEditing}/>
